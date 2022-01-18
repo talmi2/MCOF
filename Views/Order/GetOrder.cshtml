@@ -1,0 +1,28 @@
+﻿@model MCOF.ViewModels.OrderViewModel
+@{
+    ViewBag.Title = "GetOrder";
+}
+
+<h2>Order with products list</h2>
+
+@for (int i=1; i<=6; i++)
+            {
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <img scr="~/Images/img-@(i + ".png")" alt="" class="text-center" />
+                                    </div>
+                                    <div class="col-md-7">
+                                        <h3 class="text-danger">Computer Vision</h3>
+                                        <h4>Price:</h4>
+                                        <h4>Category:</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
