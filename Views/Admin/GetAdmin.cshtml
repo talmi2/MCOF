@@ -1,0 +1,67 @@
+﻿@model IEnumerable<MCOF.Models.Admin>
+
+@{
+    ViewBag.Title = "GetAdmin";
+}
+
+<h2>GetAdmin</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aFirstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aLastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aPassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BranchName)
+        </th>
+        <th></th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.aFirstname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.aLastname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.aEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.aPassword)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BranchName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    }
+
+
+</table>

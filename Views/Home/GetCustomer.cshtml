@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "GetCustomer";
+}
+
+<h2>Customer Details</h2>
+<h6>Manage all customers from here.</h6>
+
+<table class="table table-bordered table-hover">
+    <tr class="btn-primary">
+        <th>Id</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Birthday</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>IsVip</th>
+        <th>Type</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var customer in ViewBag.Customers)
+    {
+        <tr>
+            <td>@customer.CID</td>
+            <td>@customer.cFirstname</td>
+            <td>@customer.cLastname</td>
+            <td>@customer.cBirthday</td>
+            <td>@customer.cAddress</td>
+            <td>@customer.cCity</td>
+            <td>@customer.cEmail</td>
+            <td>@customer.cPassword</td>
+            <td>
+                @if (customer.cIsVip == true)
+                    {<p>Vip User</p>}
+                else
+                    { <p>Standard User</p>}
+            </td>
+            <td>@customer.cType</td>
+            <td>
+                <button type="button" class="btn btn-primary btn-sm">Edit</button> ||
+                <button type="button" class="btn btn-danger btn-sm">Delete</button>
+            </td>
+    </tr>
+    }
+</table>

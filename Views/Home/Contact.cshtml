@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+
+		* {
+  			box-sizing: border-box;
+		}
+
+		input[type=text], select, textarea {
+		  	width: 100%;
+		  	padding: 12px;
+		  	border: 1px solid #ccc;
+		  	margin-top: 6px;
+		  	margin-bottom: 16px;
+		  	resize: vertical;
+		}
+
+		input[type=submit] {
+		  	background-color: #04AA6D;
+		  	color: white;
+		  	padding: 12px 20px;
+		  	border: none;
+		  	cursor: pointer;
+		}
+
+		input[type=submit]:hover {
+		  	background-color: #45a049;
+		}
+
+		.container {
+		  	border-radius: 5px;
+		  	background-color: #f2f2f2;
+		  	padding: 10px;
+
+		}
+
+		.column {
+		  	float: left;
+		  	width: 50%;
+		  	margin-top: 6px;
+		  	padding: 20px;
+		}
+
+		.row:after {
+		  	content: "";
+		  	display: table;
+		  	clear: both;
+		}
+ 
+		  	.column, input[type=submit] {
+		    	width: 50%;
+		    	margin-top: 0;
+		  	}
+		
+
+    </style>
+    <title>contact us</title>
+</head>
+<body>
+    <div class="container" style="padding-top: 70px">
+        <div style="text-align:center">
+            <h2>Contact Us</h2>
+            <p>Swing by for a cup of coffee, or leave us a message:</p>
+        </div>
+        <div class="row">
+            <div class="column">
+                <img src="https://media.istockphoto.com/photos/espresso-coffee-cup-with-beans-on-vintage-table-picture-id664313320?k=20&m=664313320&s=612x612&w=0&h=cg0PvaxP42ObSijWu0_6uQtOH3zJ2OPOiIaqtY_mcKI=" style="width:100%">
+            </div>
+            <div class="column">
+                <form action="/action_page.php">
+                    <label for="fname">First Name :</label></br>
+                    <input type="text" id="fname" name="firstname" placeholder="ex: David" style="font-style:italic"></br>
+                    <label for="lname">Last Name :</label></br>
+                    <input type="text" id="lname" name="lastname" placeholder="ex: Levi" style="font-style:italic"></br>
+                    <label for="city">City :</label></br>
+                    <select id="city" name="city">
+                        <option value="acre">Acre</option>
+                        <option value="arad">Arad</option>
+                        <option value="ashdod">Ashdod</option>
+                        <option value="ashkelon">Ashkelon</option>
+                        <option value="batyam">Bat Yam</option>
+                        <option value="beersheva">Beer Sheva</option>
+                        <option value="bneibrak">Bnei Brak</option>
+                        <option value="dimona">Dimona</option>
+                        <option value="eilat">Eilat</option>
+                        <option value="haifa">Haïfa</option>
+                        <option value="hertzlia">Hertzlia</option>
+                        <option value="holon">Holon</option>
+                        <option value="jerusalem">Jerusalem</option>
+                        <option value="lod">Lod</option>
+                        <option value="netanya">Netanya</option>
+                        <option value="netivot">Netivot</option>
+                        <option value="raanana">Raanana</option>
+                        <option value="ramatgan">Ramat Gan</option>
+                        <option value="rishonlezion">Richon Lezion</option>
+                        <option value="telaviv">Tel Aviv</option>
+                        <option value="tiberias">Tiberias</option>
+                        <option value="zefat">Zefat</option>
+                        <option value="other">Other</option>
+                        <option value="outofthecountry">Out of the country</option>
+                    </select></br>
+                    <label for="subject">Subject</label></br>
+                    <textarea id="subject" name="subject" placeholder="Tell us something..." style="height:170px; font-style:italic"></textarea>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
