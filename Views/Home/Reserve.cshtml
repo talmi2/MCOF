@@ -1,0 +1,24 @@
+﻿@model MyCupOverflows.Models.Seat
+@{
+    ViewBag.Title = "ReservePlave";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ReservePlace</h2>
+
+
+@using (Html.BeginForm("Reserve", "Home", FormMethod.Post, new { id = "popupForm" }))
+{
+    @Html.HiddenFor(a => a.Branch)
+    @Html.HiddenFor(a => a.nTable)
+    @Html.HiddenFor(a => a.Number)
+    @Html.HiddenFor(a => a.Hall)
+    @Html.HiddenFor(a => a.Date)
+    @Html.HiddenFor(a => a.Reserve)
+
+
+
+    <div>
+        <input type="submit" value="Confirm" />
+    </div>
+}

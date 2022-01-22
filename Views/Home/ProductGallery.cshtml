@@ -1,0 +1,105 @@
+﻿@{ ViewBag.Title = "Product Gallery"; }
+
+<h2>Manage Product</h2>
+
+
+@* Normal and ThemeRoller*@
+<table id="PRODUCTTable" class="display">
+    @*Semantic UI
+        @
+        <table id="employeeTable" class="ui celled table">
+            @
+        @Bootstrap@
+        @
+        <table id="employeeTable" class="table table-striped table-bordered">
+    *@
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Picture</th>
+            <th>Price</th>
+            <th>Specification</th>
+            <th>RestrictedAge</th>
+            <th>Branch</th>
+
+        </tr>
+
+
+    </thead>
+
+</table>
+
+<a href="@Url.Action("Login","Registration")" class="btn btn-warning">Logout</a>
+
+<!-- Normal -->
+<link href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+<!-- jQuery ThemeRoller -->
+@*<link href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.15/css/dataTables.jqueryui.min.css" rel="stylesheet" />*@
+
+<!-- Semantic UI -->
+@*<link href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.15/css/dataTables.semanticui.min.css" rel="stylesheet" />*@
+
+<!-- Bootstrap 4 -->
+@*
+    <link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+*@
+
+@section scripts{
+    @* Normal *@
+    <script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+
+    @* jQuery ThemeRoller*@
+    @*
+        <script src="https://cdn.datatables.net/1.10.15/js/dataTables.jqueryui.min.js"></script>
+    *@
+
+    @* Semantic UI*@
+    @*<script src="https://cdn.datatables.net/1.10.15/js/dataTables.semanticui.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>*@
+
+    @* Bootstrap 4*@
+    @*<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" rel="stylesheet" />
+        <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js"></script>*@
+
+    <script>
+        $(document).ready(function () {
+
+            $("#MOVIETable").DataTable(
+                {
+                    "ajax": {
+                        "url": "/PRODUCT/GetList",
+                        "type": "GET",
+                        "datatype": "json"
+                    },
+                    "columns": [
+                        { "data": "Id" },
+                        { "data": "Name" },
+                        { "data": "Category"},
+                        {
+                            "data": "Picture",
+                            "render": function (data) {
+                                return '<img src=/Images/' + data + " height=\"50\"/>";
+                            }
+                        },
+                        { "data": "Price" },
+                        { "data": "Specification" },
+                        { "data": "RestrictedAge" },
+                        { "data": "Branch" },
+                        {
+                            "data": "Id", "width": "50px", "render": function (data) {
+                                return '<a class="popup" href="/Home/SeatGalleryUser/' + data + '">Choose your seat</a>';
+                            }
+                        }
+                    ]
+                });
+        }
+
+        );</script>
+}
